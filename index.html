@@ -127,7 +127,17 @@
 }
 </style>
 
-<button class="follow-btn" id="follow-btn">🔔 Follow for Live Updates</button>
+<script>
+document.getElementById("follow-btn").onclick = function() {
+  alert("Button kaam kar raha hai!");
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(function(OneSignal) {
+    OneSignal.Slidedown.promptPush();
+  });
+}
+</script>
+</body>
+</html>
 
 <script>
 document.getElementById("follow-btn").onclick = function() {
