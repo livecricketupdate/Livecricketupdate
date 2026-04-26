@@ -6,7 +6,15 @@
     <title>Live Cricket Update - PSL 2026 News</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3784683294807471"
      crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "d9203fa5-6c24-4780-a85e-6774f94a2017",
+    });
+  });
+</script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; background: #0a3d2e; color: white; padding: 10px; }
@@ -85,7 +93,28 @@
 
         
     
-    
+    <!-- OneSignal Follow Button -->
+<style>
+.follow-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #e00000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(224,0,0,0.4);
+}
+</style>
+
+<button class="follow-btn" onclick="OneSignal.Slidedown.promptPush()">
+  🔔 Follow for Live Updates
+</button>
     <div class="footer">
         <p>© 2026 LiveCricketUpdate.vercel.app | Auto refresh in 30s</p>
         <p>Contact:<br><a href="about.html">About Us</a> | <a href="privacy.html">Privacy Policy</a>
