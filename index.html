@@ -137,16 +137,21 @@
 }
 </style>
 
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
-document.getElementById("follow-btn").onclick = function() {
-  alert("Button kaam kar raha hai!");
   window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(function(OneSignal) {
-    OneSignal.Slidedown.promptPush();
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "3993d0c8-5f88-4e8f-bd71-cbda5f4b05b4",
+    });
   });
-}
+  
+  function subscribeUser() {
+    alert("Button kaam kar raha hai!");
+    OneSignal.Slidedown.promptPush();
+  }
 </script>
-<button class="follow-btn" id="follow-btn">🔔 Follow cricket update</button>
+
 <!-- OneSignal Follow Button -->
 <style>
 .follow-btn {
@@ -163,19 +168,14 @@ document.getElementById("follow-btn").onclick = function() {
   cursor: pointer;
   z-index: 9999;
   box-shadow: 0 4px 12px rgba(224,0,0,0.4);
-166   }
-167   
-168   }
-169   </script>
-170   <button class="follow-btn" id="follow-btn">
-171
-
 }
-</script>
+</style>
 
+<button class="follow-btn" id="follow-btn" onclick="subscribeUser()">🔔 Follow cricket update</button>
 
-<p>© 2026 LiveCricketUpdate.vercel.app | Auto refresh in 60s</p>
-<p>Contact:<br><a href="about.html">About Us</a> | <a href="privacy.html">Privacy Policy</a></p>
+<p>© 2026 LiveCricketUpdate.vercel.app | Auto refresh every 5 sec</p>
+<p>Contact:<br><a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
 
 </body>
 </html>
+
