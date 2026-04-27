@@ -171,7 +171,38 @@
 
 <p>© 2026 LiveCricketUpdate.vercel.app | Auto refresh every 5 sec</p>
 <p>Contact:<br><a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+<!-- OneSignal Start -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(function(OneSignal) {
+    OneSignal.init({
+      appId: "3993d0c8-5f88-4e8f-bd71-cbda5f4b05b4",
+    });
+  });
+</script>
 
+<script>
+  function subscribeUser() {
+    alert("Button kaam kar raha hai!");
+    OneSignalDeferred.push(function(OneSignal) {
+      OneSignal.Slidedown.promptPush().catch(function(error) {
+        alert("Error: " + error + "\n🔒 dabake Notifications Allow karo");
+      });
+    });
+  }
+</script>
+
+<style>
+.follow-btn {
+  position: fixed; bottom: 20px; right: 20px; background: #e00000;
+  color: white; padding: 12px 20px; border: none; border-radius: 50px;
+  font-size: 16px; font-weight: bold; cursor: pointer; z-index: 9999;
+}
+</style>
+
+<button class="follow-btn" onclick="subscribeUser()">🔔 Follow cricket update</button>
+<!-- OneSignal End -->
 </body>
 </html>
 
