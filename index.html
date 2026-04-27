@@ -163,19 +163,16 @@ document.getElementById("follow-btn").onclick = function() {
   cursor: pointer;
   z-index: 9999;
   box-shadow: 0 4px 12px rgba(224,0,0,0.4);
-}
-</style>
+166   }
+167   
+168   }
+169   </script>
+170   <button class="follow-btn" id="follow-btn">
+171
 
-<script>
-document.getElementById("follow-btn").onclick = function() {
-  alert("Button kaam kar raha hai!");
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(function(OneSignal) {
-    OneSignal.Slidedown.promptPush();
-  });
 }
 </script>
-<button class="follow-btn" id="follow-btn">🔔 Follow cricket update</button>
+
 
 <p>© 2026 LiveCricketUpdate.vercel.app | Auto refresh in 60s</p>
 <p>Contact:<br><a href="about.html">About Us</a> | <a href="privacy.html">Privacy Policy</a></p>
