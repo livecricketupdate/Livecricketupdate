@@ -184,17 +184,17 @@
 
 <script>
 function subscribeUser() {
-    alert("Step 1: Button theek hai");
+    
     
     if (typeof OneSignal === 'undefined') {
-        alert("ERROR: OneSignal load nahi hua. Page refresh karo");
+        
         return;
     }
     
-    alert("Step 2: OneSignal mil gaya. Ab Allow maang rahe hain...");
+    
     
     OneSignal.User.PushSubscription.optIn().then(function() {
-        alert("MUBARAK HO! Notification Allow ho gaya");
+        
     }).catch(function(error) {
         alert("ERROR: " + error + "\n\nYE BLOCK HAI. Chrome mein 🔒 dabao → Notifications → Allow");
     });
