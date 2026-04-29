@@ -184,16 +184,31 @@
 
 <script>
 function subscribeUser() {
-    if (typeof OneSignal === 'undefined') {
+    if (typeof OneSignalDeferred === 'undefined') {
         console.log("OneSignal load nahi hua");
         return;
     }
     
-    OneSignal.push(function() {
-        OneSignal.showNativePrompt();
+    OneSignalDeferred.push(function(OneSignal) {
+        OneSignal.Notifications.requestPermission();
     });
 }
 </script>
+
+<style>
+.follow-btn {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #e63946; color: white; padding: 12px 20px; border: none;
+    border-radius: 50px; font-size: 16px; font-weight: bold; cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 9999;
+}
+</style>
+
+<button class="follow-btn" onclick="subscribeUser()">Follow cricket update</button>
+<!-- OneSignal End -->
+</body>
+</html>
+
 
 <style>
 .follow-btn {
