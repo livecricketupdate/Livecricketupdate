@@ -184,19 +184,13 @@
 
 <script>
 function subscribeUser() {
-    
-    
     if (typeof OneSignal === 'undefined') {
-        
+        console.log("OneSignal load nahi hua");
         return;
     }
     
-    
-    
-    OneSignal.User.PushSubscription.optIn().then(function() {
-        
-    }).catch(function(error) {
-        alert("ERROR: " + error + "\n\nYE BLOCK HAI. Chrome mein 🔒 dabao → Notifications → Allow");
+    OneSignal.push(function() {
+        OneSignal.showNativePrompt();
     });
 }
 </script>
